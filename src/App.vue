@@ -45,7 +45,7 @@ export default {
     },
 
     addTask(task) {
-      this.tasks = [...tasks, task];
+      this.tasks = [...this.tasks, task];
     },
   },
   created() {

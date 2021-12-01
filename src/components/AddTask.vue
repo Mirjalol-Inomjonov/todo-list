@@ -51,7 +51,7 @@ export default {
         reminder: this.reminder,
       };
 
-      this$emit('add-task', newTask)
+      this.$emit('add-task', newTask)
 
 
 

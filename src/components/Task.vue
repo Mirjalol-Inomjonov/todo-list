@@ -33,7 +33,7 @@ export default {
   cursor: pointer;
   border-left: 5px solid transparent;
   &.reminder {
-    border-left-color: teal;
+    border-left-color: lightgreen;
   }
   h3 {
     display: flex;
