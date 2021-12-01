@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button class="btn" :style="{ background: color }">
+    <button @click="onClick" class="btn" :style="{ background: color }">
       {{ text }}
     </button>
   </div>
@@ -18,7 +18,9 @@ export default {
   },
 
   methods: {
-    
+    onClick() {
+      this.$emit("toggle-add-task");
+    },
   },
 };
 </script>
