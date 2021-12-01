@@ -3,14 +3,25 @@
     <h1>
       {{ title }}
     </h1>
+      <Button :text="text" :color="color"/>
   </header>
 </template>
 
 <script>
+import Button from "./Button.vue";
 export default {
+  components: { Button },
   name: "Header",
+
   props: {
     title: String,
+  },
+
+  data() {
+    return {
+      text: "Add Task",
+      color: "green",
+    };
   },
 };
 </script>
