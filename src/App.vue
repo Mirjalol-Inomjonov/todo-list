@@ -2,13 +2,19 @@
   <div id="app">
     <div class="container">
       <Header title="Track" />
-      <Tasks @remove-task="removeTask" :tasks="tasks" />
+      <AddTask />
+      <Tasks
+        @toggle-reminder="toggleReminder"
+        @remove-task="removeTask"
+        :tasks="tasks"
+      />
     </div>
     <router-view />
   </div>
 </template>
 
 <script>
+import AddTask from "./components/AddTask.vue";
 import Header from "./components/Header";
 import Tasks from "./components/Tasks";
 
@@ -16,6 +22,7 @@ export default {
   components: {
     Header,
     Tasks,
+    AddTask,
   },
 
   data() {
@@ -29,6 +36,12 @@ export default {
       if (confirm("Are you delete this task?")) {
         this.tasks = this.tasks.filter((task) => task.id !== id);
       }
+    },
+
+    toggleReminder(id) {
+      this.tasks = this.tasks.map((task) =>
+        task.id === id ? { ...task, reminder: !task.reminder } : task
+      );
     },
   },
   created() {
@@ -65,6 +78,7 @@ export default {
 }
 body {
   font-family: "Poppins", sans-serif;
+  user-select: none;
 }
 #app {
   padding: 35px;

@@ -1,5 +1,8 @@
 <template>
-  <div :class="[task.reminder ? 'reminder' : '', 'task']">
+  <div
+    @dblclick="$emit('toggle-reminder', task.id)"
+    :class="[task.reminder ? 'reminder' : '', 'task']"
+  >
     <h3>
       {{ task.text }}
       <i @click="onRemove(task.id)" class="fas fa-times"></i>
@@ -15,9 +18,9 @@ export default {
     task: Object,
   },
   methods: {
-    onRemove(id){
-      this.$emit('remove-task', id)
-    }
+    onRemove(id) {
+      this.$emit("remove-task", id);
+    },
   },
 };
 </script>
