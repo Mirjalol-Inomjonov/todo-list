@@ -1,7 +1,8 @@
 <template>
   <div id="app">
     <div class="container">
-      <Header :title="title" />
+      <Header title="Track" />
+      <Tasks :tasks="tasks" />
     </div>
     <router-view />
   </div>
@@ -9,11 +10,14 @@
 
 <script>
 import Header from "./components/Header";
+import Tasks from "./components/Tasks";
 export default {
   components: {
     Header,
+    Tasks,
   },
-  data() {
+
+  Tasksdata() {
     return {
       title: "Track",
       tasks: [],
@@ -34,7 +38,7 @@ export default {
         reminder: true,
       },
       {
-        id: 1,
+        id: 3,
         text: "Real Madrid was created",
         day: "december 1st 1879 at 1:30pm",
         reminder: true,

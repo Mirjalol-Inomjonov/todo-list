@@ -1,6 +1,8 @@
 <template>
   <div>
-    <button @click="onClick()" class="btn" :style="{ background: color }">{{ text }}</button>
+    <button @click="onClick()" class="btn" :style="{ background: color }">
+      {{ text }}
+    </button>
   </div>
 </template>
 
@@ -16,9 +18,9 @@ export default {
   },
 
   methods: {
-    onClick(){
-      console.log('kbcdhj');
-    }
+    onClick() {
+      console.log("kbcdhj");
+    },
   },
 };
 </script>
