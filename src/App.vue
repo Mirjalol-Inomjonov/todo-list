@@ -18,16 +18,18 @@ export default {
     Tasks,
   },
 
-  Tasksdata() {
+  data() {
     return {
       title: "Track",
       tasks: [],
     };
   },
   methods: {
-    removeTask(id){
-      console.log('task', id);
-    }
+    removeTask(id) {
+      if (confirm("Are you delete this task?")) {
+        this.tasks = this.tasks.filter((task) => task.id !== id);
+      }
+    },
   },
   created() {
     this.tasks = [
