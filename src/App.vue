@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="container">
-      <Header :title="title"/>
+      <Header :title="title" />
     </div>
     <router-view />
   </div>
@@ -15,8 +15,31 @@ export default {
   },
   data() {
     return {
-      title: 'Track'
-    }
+      title: "Track",
+      tasks: [],
+    };
+  },
+  created() {
+    this.tasks = [
+      {
+        id: 1,
+        text: "Leverpool was created",
+        day: "march 1st 1989 at 2:30pm",
+        reminder: true,
+      },
+      {
+        id: 2,
+        text: "Barcelona was created",
+        day: "january 1st 1549 at 5:30pm",
+        reminder: true,
+      },
+      {
+        id: 1,
+        text: "Real Madrid was created",
+        day: "december 1st 1879 at 1:30pm",
+        reminder: true,
+      },
+    ];
   },
 };
 </script>
