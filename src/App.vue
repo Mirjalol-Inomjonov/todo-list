@@ -2,7 +2,7 @@
   <div id="app">
     <div class="container">
       <Header title="Track" />
-      <Tasks :tasks="tasks" />
+      <Tasks @remove-task="removeTask" :tasks="tasks" />
     </div>
     <router-view />
   </div>
@@ -11,6 +11,7 @@
 <script>
 import Header from "./components/Header";
 import Tasks from "./components/Tasks";
+
 export default {
   components: {
     Header,
@@ -22,6 +23,11 @@ export default {
       title: "Track",
       tasks: [],
     };
+  },
+  methods: {
+    removeTask(id){
+      console.log('task', id);
+    }
   },
   created() {
     this.tasks = [
